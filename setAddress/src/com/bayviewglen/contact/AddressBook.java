@@ -8,7 +8,7 @@ import java.util.Set;
 public class AddressBook
 {
 	private HashMap<String, contact> addressBook;
-	
+
 
 	public AddressBook()
 	{
@@ -41,7 +41,7 @@ public class AddressBook
 	}
 	public contact searchByPhoneNumber(String phone){
 		for (String key : addressBook.keySet()){
-			if (addressBook.get(key).getPhoneNumber().equals(phone)){
+			if (addressBook.get(key).getPhoneNumber().contains(phone)){
 				addressBook.get(key).getContact();
 				return addressBook.get(phone);
 			}
@@ -101,7 +101,7 @@ public class AddressBook
 	}
 	public Set<String> keySet(){
 		return addressBook.keySet();
-		
+
 	}
 
 
@@ -122,4 +122,4 @@ public class AddressBook
 		return addressBook.get(key);
 	}
 
-	}
+}
