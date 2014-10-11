@@ -82,7 +82,7 @@ public class runner {
 			System.out.println("6 Search By First Name");
 			System.out.println("7 Search By Last Name");
 
-			
+
 			iChoice = scanner.nextInt();
 
 			if(iChoice==quit ){ 
@@ -109,7 +109,7 @@ public class runner {
 
 			String firstName; 
 			String lastName;
-			String phoneNumber; 
+			String phoneNumber = null; 
 			if(iChoice == add){
 
 				System.out.println("The guy's first name pls"); 
@@ -123,15 +123,26 @@ public class runner {
 				} catch (Exception e) {
 					System.out.println("The value you have input is not a valid integer");
 				}
-				phoneNumber = temp.nextLine();
 				addressBook.addContact( firstName,  lastName,  phoneNumber ); 			
 			}
 			else if(iChoice == remove){
 				System.out.println("The guy's phone number pls"); 
 				System.out.println("if you don't know, search for it first");
-				phoneNumber = temp.nextLine();
-				addressBook.deleteAddress(phoneNumber); 			
 
+				boolean find = false; 
+				while(!find){
+					try {
+						phoneNumber = temp.nextLine();
+						Integer.parseInt(phoneNumber); 
+					} catch (Exception e) {
+						System.out.println("The value you have input is not a valid integer");
+					}
+					if(addressBook.validKey(phoneNumber)){
+						System.out.println("pls try again"); 
+					}
+					addressBook.deleteAddress(phoneNumber); 			
+					find = true; 
+				}
 			}
 			else if (iChoice == searchPhone ){
 
