@@ -39,7 +39,7 @@ public class runner {
 			System.out.println("3) A Address Book");
 
 			bChoice = scanner.nextLine();
-			String addressBookChosen = null;
+			String Chosen = null;
 			boolean validAddressBook = false; 
 			while(!validAddressBook){
 				try{
@@ -55,21 +55,21 @@ public class runner {
 			}
 
 			if (bChoice .equals("1")){
-				addressBookChosen = "traddressbook.txt";
-				fileScanner = new Scanner("inputs/traddressbook.txt");
-				System.out.println("J Address Book Selected.");
+				Chosen = "J.txt";
+				fileScanner = new Scanner("inputs/J.txt");
+				System.out.println("J Selected.");
 			}
 
 			else if (bChoice .equals("2")){
-				addressBookChosen = "fladdressbook.txt";
-				fileScanner = new Scanner("inputs/fladdressbook.txt");
-				System.out.println("I Address Book Selected.");
+				Chosen = "I.txt";
+				fileScanner = new Scanner("inputs/I.txt");
+				System.out.println("I  Selected.");
 			}
 
 			else if (bChoice .equals("3")){
-				addressBookChosen = "viaddressbook.txt";
-				fileScanner = new Scanner("inputs/viaddressbook.txt");
-				System.out.println("A Address Book Selected.");
+				Chosen = "A.txt";
+				fileScanner = new Scanner("inputs/A.txt");
+				System.out.println("A Selected.");
 			}
 
 
@@ -87,7 +87,7 @@ public class runner {
 
 			if(iChoice==quit ){ 
 				try{
-					PrintWriter writer = new PrintWriter(new File(addressBookChosen)); 
+					PrintWriter writer = new PrintWriter(new File(Chosen)); 
 					writer.println(addressBook.getSize());
 					for (String key : addressBook.keySet()){
 						writer.print(addressBook.get(key));  // make sure to change this once money lost is put in
@@ -212,7 +212,7 @@ public class runner {
 					running = false;
 					good = false;
 					try{
-						PrintWriter writer = new PrintWriter(new File(addressBookChosen)); 
+						PrintWriter writer = new PrintWriter(new File(Chosen)); 
 						writer.println(addressBook.getSize());
 						for (String key : addressBook.keySet()){
 							writer.print(addressBook.get(key));  // make sure to change this once money lost is put in
