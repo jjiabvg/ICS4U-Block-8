@@ -82,9 +82,7 @@ public class runner {
 			System.out.println("6 Search By First Name");
 			System.out.println("7 Search By Last Name");
 
-			boolean adding = false; 
-			boolean removing = false; 
-			boolean showing = false; 
+			
 			iChoice = scanner.nextInt();
 
 			if(iChoice==quit ){ 
