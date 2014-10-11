@@ -47,9 +47,6 @@ public class AddressBook
 		return null;
 	}
 
-	// Returns the contacts information if searched by first name
-	// Will return Null if no contact exists
-	// Problem: Never finds the right person *Resolved* Forgot to add .getFirstName()
 	public contact searchByFirstName(String firstName){
 		for (String key : addressBook.keySet()){
 			if (addressBook.get(key).getFirstName().contains(firstName)){
@@ -62,9 +59,7 @@ public class AddressBook
 
 
 
-	// Returns the contacts information if searched by last name
-	// Will return Null if no contact exists
-	// Problem: Same as with searchByFirstName() *Resolved* Forgot to add .getLastName()
+	
 	public contact searchByLastName(String lastName){
 		for (String key : addressBook.keySet()){
 			if (addressBook.get(key).getLastName().contains(lastName)){

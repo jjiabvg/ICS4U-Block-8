@@ -28,6 +28,7 @@ public class runner {
 		final int searchLName = 7;
 		final int searchFName = 6;
 
+		
 		boolean running = true; 
 		while(running){
 			AddressBook addressBook = new AddressBook();
@@ -71,6 +72,7 @@ public class runner {
 				fileScanner = new Scanner("inputs/A.txt");
 				System.out.println("A Selected.");
 			}
+			//Read the notebook
 
 
 
