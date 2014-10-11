@@ -23,7 +23,7 @@ public class contact {
                      return firstName;
               }
               
-           
+             
 
 			public void getContact() {
 				System.out.println( firstName + " " + lastName);
