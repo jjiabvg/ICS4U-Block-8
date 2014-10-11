@@ -41,7 +41,7 @@ public class AddressBook
 	}
 	public contact searchByPhoneNumber(String phone){
 		for (String key : addressBook.keySet()){
-			if (addressBook.get(key).getPhoneNumber().contains(phone)){
+			if (addressBook.keySet().contains(phone)){
 				addressBook.get(key).getContact();
 				return addressBook.get(phone);
 			}
