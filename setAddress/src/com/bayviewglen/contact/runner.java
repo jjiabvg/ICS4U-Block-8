@@ -121,8 +121,7 @@ public class runner {
 						PrintWriter writer = new PrintWriter(new File(Chosen)); 
 						writer.println(addressBook.getSize());
 						for (String key : addressBook.keySet()){
-							writer.print(addressBook.get(key));  // make sure to change this once money lost is put in
-							writer.println(addressBook.get(key));
+							addressBook.Save(key);
 						}
 						writer.close();
 						System.out.println("Succesfully Saved! Have a nice day!");
@@ -257,8 +256,7 @@ public class runner {
 							PrintWriter writer = new PrintWriter(new File(Chosen)); 
 							writer.println(addressBook.getSize());
 							for (String key : addressBook.keySet()){
-								writer.print(addressBook.get(key));  // make sure to change this once money lost is put in
-								writer.println(addressBook.get(key));
+								addressBook.Save(key);
 							}
 							writer.close();
 							System.out.println("Succesfully Saved! Have a nice day!");

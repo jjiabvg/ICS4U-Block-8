@@ -57,7 +57,9 @@ public class AddressBook
 		return null;
 	}
 
-
+	public String  Save(String k){
+		return addressBook.get(k).getFirstName() + " " + addressBook.get(k).getLastName() + "," + k; 
+	}
 
 	
 	public contact searchByLastName(String lastName){
