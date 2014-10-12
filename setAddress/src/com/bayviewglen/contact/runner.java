@@ -30,7 +30,7 @@ public class runner {
 
 
 		boolean running = true; 
-		while(running){
+
 			AddressBook addressBook = new AddressBook();
 
 			String bChoice; 
@@ -43,41 +43,34 @@ public class runner {
 			String Chosen = null;
 			boolean validAddressBook = false; 
 			while(!validAddressBook){
-				try{
-					if (bChoice .equals("1") || bChoice .equals("2") || bChoice .equals("3") ){
-						validAddressBook = true;
-					}else
-						throw new Exception();
-
-				}catch(Exception e){
-					System.out.println("please type a valid choice.");
-					bChoice = fileScanner.nextLine();
-				}
-			}
+			
+			
 
 			if (bChoice .equals("1")){
-				Chosen = "J.txt";
-				fileScanner = new Scanner("inputs/J.txt");
+				Chosen = "input/J.dat";
 				System.out.println("J Selected.");
+				validAddressBook = true;
 			}
 
 			else if (bChoice .equals("2")){
-				Chosen = "I.txt";
-				fileScanner = new Scanner("inputs/I.txt");
+				Chosen = "input/I.dat";
+				validAddressBook = true;
+
 				System.out.println("I  Selected.");
 			}
 
 			else if (bChoice .equals("3")){
-				Chosen = "A.txt";
-				fileScanner = new Scanner("inputs/A.txt");
+				Chosen = "input/A.dat";
 				System.out.println("A Selected.");
+				validAddressBook = true;
+
+			}
 			}
 			//Read the notebook
 			try{
 				System.out.println("=====================================================================================");
 
 
-				System.out.println("Please wait while we load the horses");
 				String fname;
 				String lname;
 				String contact; 
@@ -87,22 +80,20 @@ public class runner {
 				for (int i = 0; i<contactList.length; ++i){
 					contactList[i] = fileScanner.nextLine();
 					lname = contactList[i].split(" ")[1];
+					int startIndex = lname.indexOf(" ");
+					int endIndex = lname.indexOf(",");
 					fname =  contactList[i].split(" ")[0];
 					contact = contactList[i].split(",")[1];
+					lname = lname.substring(startIndex + 1, endIndex);
 					addressBook.addContact(fname, lname, contact);
-					
 					}
 
 				
-				
-
-				//this finds the number of horses in the file
-
 			}catch(Exception ex){
 				System.out.println("Umm well this is awkward... Error reading file" + ex.getMessage());
 				System.exit(0);
 
-
+				while(running){
 
 
 				System.out.println("hello, this is an address book ");
